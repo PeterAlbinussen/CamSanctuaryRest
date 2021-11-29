@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CamSanctuaryRest.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace CamSanctuaryRest
 {
@@ -28,6 +30,8 @@ namespace CamSanctuaryRest
         {
 
             services.AddControllers();
+            services.AddDbContext<CamsanctuarydbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("Data Source=camsanctuary.database.windows.net;Initial Catalog=camsanctuaryDB;Persist Security Info=True;User ID=camsanctuary;Password=Admin123!")));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CamSanctuaryRest", Version = "v1" });
