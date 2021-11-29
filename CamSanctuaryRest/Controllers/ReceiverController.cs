@@ -25,9 +25,9 @@ namespace CamSanctuaryRest.Controllers
 
         // GET: api/<ReceiverController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Message> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _manager.GetAll();
         }
 
         // GET api/<ReceiverController>/5
