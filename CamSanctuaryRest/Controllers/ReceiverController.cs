@@ -2,7 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
+using CamSanctuaryRest.Managers;
+using CamSanctuaryRest.Models;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,6 +16,13 @@ namespace CamSanctuaryRest.Controllers
     [ApiController]
     public class ReceiverController : ControllerBase
     {
+        private readonly ReceiverManager _manager;
+
+        public ReceiverController(CamsanctuarydbContext context)
+        {
+            _manager = new ReceiverManager(context);
+        }
+
         // GET: api/<ReceiverController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -28,8 +39,22 @@ namespace CamSanctuaryRest.Controllers
 
         // POST api/<ReceiverController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult <Message> Post([FromBody] Message value)
         {
+            try
+            {
+                Message newMessage = _manager.AddMessage(value);
+                string uri = Url.RouteUrl(RouteData.Values) + "/" + newMessage.Id;
+                return Created(uri, newMessage);
+
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+            
         }
 
         // PUT api/<ReceiverController>/5

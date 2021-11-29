@@ -18,7 +18,7 @@ namespace CamSanctuaryRest.Models
         {
         }
 
-        public virtual DbSet<Message> Messages { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
