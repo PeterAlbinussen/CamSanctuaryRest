@@ -23,7 +23,7 @@ namespace CamSanctuaryRest.Managers.Tests
 		[TestMethod()]
 		public void SenderGetAllTest()
 		{
-			int expectedResult = 0;
+			int expectedResult = 3;
 			Assert.AreEqual(expectedResult, manager.GetAll().Count());
 		}
 	}
