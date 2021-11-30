@@ -26,9 +26,10 @@ namespace CamSanctuaryRest.Managers
 	        return _context.Messages.ToList();
         }
 
-        //public Message GetById(int id)
-        //{
-	       // return _context.Messages
-        //}
-    }
+		public Message GetById(int id)
+		{
+			return _context.Messages.Find(id);
+
+		}
+	}
 }

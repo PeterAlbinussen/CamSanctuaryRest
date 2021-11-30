@@ -32,7 +32,7 @@ namespace CamSanctuaryRest.Managers.Tests
 		{
 			int expectedIDResult = 3;
 
-			Assert.AreEqual(expectedIDResult, manager.GetById(3).ID);
+			Assert.AreEqual(expectedIDResult, manager.GetById(3).Id);
 		}
 
 	}
