@@ -26,5 +26,14 @@ namespace CamSanctuaryRest.Managers.Tests
 			int expectedResult = 0;
 			Assert.AreEqual(expectedResult, manager.GetAll().Count());
 		}
+
+		[TestMethod()]
+		public void GetByIdTest()
+		{
+			int expectedIDResult = 3;
+
+			Assert.AreEqual(expectedIDResult, manager.GetById(3).ID);
+		}
+
 	}
 }
