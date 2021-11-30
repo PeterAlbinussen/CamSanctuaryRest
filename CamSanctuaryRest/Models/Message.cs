@@ -17,6 +17,6 @@ namespace CamSanctuaryRest.Models
         public DateTime Date { get; set; }
         [Required]
         [Column("Message")]
-        public string Message1 { get; set; }
+        public string PiMessage { get; set; }
     }
 }
