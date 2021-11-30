@@ -31,6 +31,7 @@ namespace CamSanctuaryRest.Managers
 
         public Message AddMessage(Message newMessage)
         {
+            newMessage.Id = 0;
             _context.Messages.Add(newMessage);
             _context.SaveChanges();
             return newMessage;
