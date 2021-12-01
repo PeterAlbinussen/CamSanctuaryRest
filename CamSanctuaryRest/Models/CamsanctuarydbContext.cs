@@ -18,7 +18,7 @@ namespace CamSanctuaryRest.Models
         {
         }
 
-        public DbSet<Message> Messages { get; set; }
+        public virtual DbSet<Message> Messages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -35,7 +35,9 @@ namespace CamSanctuaryRest.Models
 
             modelBuilder.Entity<Message>(entity =>
             {
-                entity.Property(e => e.PiMessage).IsUnicode(false);
+                entity.Property(e => e.Message1).IsUnicode(false);
+
+                entity.Property(e => e.PictureId).IsUnicode(false);
             });
 
             OnModelCreatingPartial(modelBuilder);

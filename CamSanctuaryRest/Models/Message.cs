@@ -18,5 +18,7 @@ namespace CamSanctuaryRest.Models
         [Required]
         [Column("Message")]
         public string PiMessage { get; set; }
+        [Required]
+        public string PictureId { get; set; }
     }
 }
