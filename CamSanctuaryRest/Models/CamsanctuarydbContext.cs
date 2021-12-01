@@ -35,7 +35,7 @@ namespace CamSanctuaryRest.Models
 
             modelBuilder.Entity<Message>(entity =>
             {
-                entity.Property(e => e.Message1).IsUnicode(false);
+                entity.Property(e => e.PiMessage).IsUnicode(false);
 
                 entity.Property(e => e.PictureId).IsUnicode(false);
             });
