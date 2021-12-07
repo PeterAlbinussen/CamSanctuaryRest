@@ -54,7 +54,23 @@ namespace CamSanctuaryRest.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            
+        }
+
+        [HttpPost("video")]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult PostVideo([FromBody] IEnumerable<VideoData> value)
+        {
+            try
+            {
+                _manager.AddVideo(value);
+                return Created("", null);
+
+            }
+            catch (ArgumentException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         // PUT api/<ReceiverController>/5
