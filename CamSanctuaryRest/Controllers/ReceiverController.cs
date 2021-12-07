@@ -30,6 +30,13 @@ namespace CamSanctuaryRest.Controllers
             return _manager.GetAll();
         }
 
+
+        [HttpGet ("Video")]
+        public IEnumerable<VideoData> GetVideo()
+        {
+            return _manager.GetAllVideo();
+        }
+
         // GET api/<ReceiverController>/5
         [HttpGet("{id}")]
         public string Get(int id)

@@ -29,6 +29,10 @@ namespace CamSanctuaryRest.Managers
         {
             return _context.Messages.ToList();
         }
+        public IEnumerable<VideoData> GetAllVideo()
+        {
+            return new List<VideoData>(data);
+        }
 
 
         public Message AddMessage(Message newMessage)
