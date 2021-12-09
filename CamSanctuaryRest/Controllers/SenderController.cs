@@ -11,40 +11,45 @@ using Microsoft.AspNetCore.Http;
 
 namespace CamSanctuaryRest.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class SenderController : ControllerBase
-	{
-		private readonly SenderManager _manager;
+    [Route("api/[controller]")]
+    [ApiController]
+    public class SenderController : ControllerBase
+    {
+        private readonly SenderManager _manager;
 
-		public SenderController(CamsanctuarydbContext context)
-		{
-			_manager = new SenderManager(context);
-		}
+        public SenderController(CamsanctuarydbContext context)
+        {
+            _manager = new SenderManager(context);
+        }
 
         // GET: api/<SenderController>
-		[HttpGet]
-		public IEnumerable<Message> GetAll()
-		{
-			return _manager.GetAll();
-		}
-		
-        // GET api/<SenderController>/5
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		[ProducesResponseType(StatusCodes.Status404NotFound)]
-		[HttpGet("{id}")]
-		public ActionResult<Message> Get(int id)
-		{
-			Message message = _manager.GetById(id);
-			if (message == null)
-			{
-				return NotFound("No such item, id: " + id);
-			}
-			else
-			{
-				return Ok(message);
-			}
-		}
+        [HttpGet]
+        public IEnumerable<Message> GetAll()
+        {
+            return _manager.GetAll();
+        }
+        [HttpGet("video")]
+        public IEnumerable<VideoData> GetAllvideo()
+        {
+            return _manager.GetAllVideo();
+        }
 
-	}
+        // GET api/<SenderController>/5
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpGet("{id}")]
+        public ActionResult<Message> Get(int id)
+        {
+            Message message = _manager.GetById(id);
+            if (message == null)
+            {
+                return NotFound("No such item, id: " + id);
+            }
+            else
+            {
+                return Ok(message);
+            }
+        }
+
+    }
 }

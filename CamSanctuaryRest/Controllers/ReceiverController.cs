@@ -22,12 +22,12 @@ namespace CamSanctuaryRest.Controllers
         {
             _manager = new ReceiverManager(context);
         }
-        
+
         // POST api/<ReceiverController>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult <Message> Post([FromBody] Message value)
+        public ActionResult<Message> Post([FromBody] Message value)
         {
             try
             {

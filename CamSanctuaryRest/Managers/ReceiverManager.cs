@@ -11,7 +11,6 @@ namespace CamSanctuaryRest.Managers
     {
         private static int _nextId = 1;
 
-        public static List<VideoData> data = new List<VideoData>();
 
         private readonly CamsanctuarydbContext _context;
 
@@ -24,10 +23,7 @@ namespace CamSanctuaryRest.Managers
         {
             return _context.Messages.ToList();
         }
-        public IEnumerable<VideoData> GetAllVideo()
-        {
-            return new List<VideoData>(data);
-        }
+
 
 
         public Message AddMessage(Message newMessage)
@@ -40,7 +36,7 @@ namespace CamSanctuaryRest.Managers
 
         public void AddVideo(IEnumerable<VideoData> newVideo)
         {
-            data.AddRange(newVideo);
+            SenderManager.data.AddRange(newVideo);
         }
 
     }
