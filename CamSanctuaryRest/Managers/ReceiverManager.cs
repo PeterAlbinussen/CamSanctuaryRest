@@ -20,11 +20,6 @@ namespace CamSanctuaryRest.Managers
             _context = context;
         }
 
-        //public ReceiverManager()
-        //{
-
-        //}
-
         public IEnumerable<Message> GetAll()
         {
             return _context.Messages.ToList();
@@ -45,12 +40,10 @@ namespace CamSanctuaryRest.Managers
 
         public void AddVideo(IEnumerable<VideoData> newVideo)
         {
-	        data.AddRange(newVideo);
+            data.AddRange(newVideo);
         }
 
-
-
-        }
+    }
 
 
 }

@@ -22,28 +22,7 @@ namespace CamSanctuaryRest.Controllers
         {
             _manager = new ReceiverManager(context);
         }
-
-        // GET: api/<ReceiverController>
-        [HttpGet]
-        public IEnumerable<Message> Get()
-        {
-            return _manager.GetAll();
-        }
-
-
-        [HttpGet ("Video")]
-        public IEnumerable<VideoData> GetVideo()
-        {
-            return _manager.GetAllVideo();
-        }
-
-        // GET api/<ReceiverController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+        
         // POST api/<ReceiverController>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -80,16 +59,5 @@ namespace CamSanctuaryRest.Controllers
             }
         }
 
-        // PUT api/<ReceiverController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ReceiverController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

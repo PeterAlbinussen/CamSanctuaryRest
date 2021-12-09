@@ -12,12 +12,10 @@ namespace CamSanctuaryRest.Models
         public CamsanctuarydbContext()
         {
         }
-
         public CamsanctuarydbContext(DbContextOptions<CamsanctuarydbContext> options)
             : base(options)
         {
         }
-
         public virtual DbSet<Message> Messages { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -42,7 +40,6 @@ namespace CamSanctuaryRest.Models
 
             OnModelCreatingPartial(modelBuilder);
         }
-
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }

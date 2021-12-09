@@ -22,15 +22,14 @@ namespace CamSanctuaryRest.Controllers
 			_manager = new SenderManager(context);
 		}
 
-
-		// GET: api/<SenderController>
+        // GET: api/<SenderController>
 		[HttpGet]
 		public IEnumerable<Message> GetAll()
 		{
 			return _manager.GetAll();
 		}
-
-		// GET api/<SenderController>/5
+		
+        // GET api/<SenderController>/5
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(StatusCodes.Status404NotFound)]
 		[HttpGet("{id}")]
@@ -47,22 +46,5 @@ namespace CamSanctuaryRest.Controllers
 			}
 		}
 
-		// POST api/<SenderController>
-		[HttpPost]
-		public void Post([FromBody] string value)
-		{
-		}
-
-		// PUT api/<SenderController>/5
-		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
-		{
-		}
-
-		// DELETE api/<SenderController>/5
-		[HttpDelete("{id}")]
-		public void Delete(int id)
-		{
-		}
 	}
 }

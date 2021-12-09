@@ -18,13 +18,13 @@ namespace CamSanctuaryRest.Managers.Tests
         private static CamsanctuarydbContext context = new CamsanctuarydbContext();
         private ReceiverManager manager;
 
-        private Message message = new Message() {Date = DateTime.Now, Id = _nextId++, PiMessage = "motion detected"};
+        private Message message = new Message() { Date = DateTime.Now, Id = _nextId++, PiMessage = "motion detected" };
 
         public ReceiverManagerTest()
         {
             manager = new ReceiverManager(context);
         }
-        
+
         [TestMethod]
         public void TestGetAll()
         {

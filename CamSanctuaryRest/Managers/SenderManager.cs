@@ -9,18 +9,15 @@ namespace CamSanctuaryRest.Managers
 {
     public class SenderManager
     {
-
-	    private readonly CamsanctuarydbContext _context;
+        private readonly CamsanctuarydbContext _context;
         public SenderManager(CamsanctuarydbContext context)
         {
 	        _context = context;
         }
-
         public SenderManager()
         {
 	        
         }
-
         public IEnumerable<Message> GetAll()
         {
 	        return _context.Messages.ToList();

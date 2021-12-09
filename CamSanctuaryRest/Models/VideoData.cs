@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace CamSanctuaryRest.Models
 {
-	public class VideoData
-	{
-		public byte[] Data { get; set; }
-		public string VideoName { get; set; }
-	}
+    public class VideoData
+    {
+        public byte[] Data { get; set; }
+        public string VideoName { get; set; }
+    }
 }
